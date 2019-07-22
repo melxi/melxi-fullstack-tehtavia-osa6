@@ -1,5 +1,6 @@
 import React from 'react';
 import { voteAnecdote, addAnecdote } from './reducers/anecdoteReducer';
+import AnecdoteForm from './components/AnecdoteForm';
 
 const App = (props) => {
   const anecdotes = props.store
@@ -31,11 +32,7 @@ const App = (props) => {
           </div>
         </div>
       )}
-      <h2>create new</h2>
-      <form onSubmit={add}>
-        <div><input name="add"/></div>
-        <button>create</button>
-      </form>
+      <AnecdoteForm add={add} />
     </div>
   )
 }
