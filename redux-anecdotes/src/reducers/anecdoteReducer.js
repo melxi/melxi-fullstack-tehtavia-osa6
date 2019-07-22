@@ -25,12 +25,22 @@ const reducer = (state = initialState, action) => {
 
   if (action.type === 'VOTE') {
     const id = action.data.id
-    const voted = state.find(anecdote => anecdote.id === id)
-    const votedAnecdote = {
-      ...voted,
-      votes: voted.votes + 1
+    const votedAnecdote = state.find(anecdote => anecdote.id === id)
+    const changedAnecdote = {
+      ...votedAnecdote,
+      votes: votedAnecdote.votes + 1
     }
-    return state.map(anecdote => anecdote.id !== id ? anecdote : votedAnecdote)
+    return state.map(anecdote => anecdote.id !== id ? anecdote : changedAnecdote)
+  }
+
+  if (action.type === 'ADD_NEW') {
+    const id = getId()
+    const newAnecdote = {
+      ...action.data,
+      id
+    }
+    return [...state, newAnecdote]
+    
   }
 
   return state
