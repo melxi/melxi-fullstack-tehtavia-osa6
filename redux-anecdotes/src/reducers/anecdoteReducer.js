@@ -30,7 +30,8 @@ const reducer = (state = initialState, action) => {
       ...votedAnecdote,
       votes: votedAnecdote.votes + 1
     }
-    return state.map(anecdote => anecdote.id !== id ? anecdote : changedAnecdote)
+    return state
+      .map(anecdote => anecdote.id !== id ? anecdote : changedAnecdote)
   }
 
   if (action.type === 'ADD_NEW') {

@@ -1,7 +1,9 @@
 import React from 'react';
 
 const App = (props) => {
-  const anecdotes = props.store.getState()
+  const anecdotes = props.store
+  .getState()
+  .sort((a, b) => b.votes - a.votes)
 
   const vote = (id) => {
     props.store.dispatch({
