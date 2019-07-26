@@ -7,11 +7,11 @@ const AnecdoteForm = (props) => {
   const add = (event) => {
     event.preventDefault()
     const content = event.target.add.value
-    props.store.dispatch(addAnecdote(content))
+    props.dispatch(addAnecdote(content))
     event.target.add.value = ''
-    props.store.dispatch(setNotification(content))
+    props.dispatch(setNotification(content))
     setTimeout(() => {
-      props.store.dispatch(setNotification(null))
+      props.dispatch(setNotification(null))
     }, 3000)
   }
 
