@@ -14,7 +14,7 @@ const AnecdoteList = (props) => {
   }
   
   const anecdotesToShow = (anecdote) => {
-    return anecdote.content.toLowerCase().indexOf(props.store.getState().filter.toLowerCase()) >= 0
+    return anecdote.content.toLowerCase().indexOf(props.filter.toLowerCase()) >= 0
   }
 
   const anecdotes = props.anecdotes
@@ -41,7 +41,7 @@ const AnecdoteList = (props) => {
 const mapStateToProps = state => {
   return {
     anecdotes: state.anecdotes,
-    filter: state
+    filter: state.filter
   }
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { addAnecdote } from '../reducers/anecdoteReducer'
 import { setNotification } from '../reducers/notificationReducer'
 
@@ -25,4 +26,4 @@ const AnecdoteForm = (props) => {
   )
 }
 
-export default AnecdoteForm
+export default connect()(AnecdoteForm)
