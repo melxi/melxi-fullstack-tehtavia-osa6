@@ -1,5 +1,6 @@
 import React from 'react'
 import { voteAnecdote } from '../reducers/anecdoteReducer'
+import { setNotification } from '../reducers/notificationReducer'
 
 const AnecdoteList = (props) => {
   const anecdotes = props.store
@@ -8,6 +9,11 @@ const AnecdoteList = (props) => {
 
   const vote = (id) => {
     props.store.dispatch(voteAnecdote(id))
+    const anecdote = anecdotes.find(anecdote => anecdote.id === id)
+    props.store.dispatch(setNotification(anecdote.content))
+    setTimeout(() => {
+      props.store.dispatch(setNotification(null))
+    }, 3000)
   }
 
   return (

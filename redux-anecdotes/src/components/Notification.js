@@ -7,9 +7,13 @@ const Notification = (props) => {
     borderWidth: 1
   }
   return (
-    <div style={style}>
+    <div>
+      {props.store.getState().notification && <div style={style}>
       {props.store.getState().notification}
+    </div>}
+
     </div>
+    
   )
 }
 
