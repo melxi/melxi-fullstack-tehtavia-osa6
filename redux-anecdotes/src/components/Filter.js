@@ -4,7 +4,7 @@ import { filterAnecdote } from '../reducers/filterReducer';
 
 const Filter = (props) => {
   const handleChange = (event) => {
-    props.dispatch(filterAnecdote(event.target.value))
+    props.filterAnecdote(event.target.value)
   }
   const style = {
     marginBottom: 10
@@ -17,4 +17,8 @@ const Filter = (props) => {
   )
 }
 
-export default connect()(Filter)
+const mapDispatchToProps = {
+  filterAnecdote
+}
+
+export default connect(null, mapDispatchToProps)(Filter)

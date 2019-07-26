@@ -7,11 +7,11 @@ const AnecdoteForm = (props) => {
   const add = (event) => {
     event.preventDefault()
     const content = event.target.add.value
-    props.dispatch(addAnecdote(content))
+    props.addAnecdote(content)
     event.target.add.value = ''
-    props.dispatch(setNotification(content))
+    props.setNotification(content)
     setTimeout(() => {
-      props.dispatch(setNotification(null))
+      props.setNotification(null)
     }, 3000)
   }
 
@@ -26,4 +26,9 @@ const AnecdoteForm = (props) => {
   )
 }
 
-export default connect()(AnecdoteForm)
+const mapDispatchToProps = {
+  addAnecdote,
+  setNotification
+}
+
+export default connect(null, mapDispatchToProps)(AnecdoteForm)
