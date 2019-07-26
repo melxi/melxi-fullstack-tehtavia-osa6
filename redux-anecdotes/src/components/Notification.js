@@ -8,12 +8,12 @@ const Notification = (props) => {
   }
   return (
     <div>
-      {props.store.getState().notification && <div style={style}>
-      {props.store.getState().notification}
-    </div>}
-
+      {props.store.getState().notification && 
+        <div style={style}>
+          {props.store.getState().notification}
+        </div>
+      }
     </div>
-    
   )
 }
 
