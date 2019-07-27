@@ -38,13 +38,10 @@ export const voteAnecdote = (id) => {
   }
 }
 
-export const addAnecdote = (content) => {
+export const addAnecdote = (data) => {
   return {
     type: 'ADD_NEW',
-    data: {
-      content,
-      votes: 0
-    }
+    data
   }
 }
 
