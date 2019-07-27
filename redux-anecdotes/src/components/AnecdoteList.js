@@ -4,7 +4,7 @@ import { voteAnecdote } from '../reducers/anecdoteReducer'
 import { setNotification } from '../reducers/notificationReducer'
 
 const AnecdoteList = (props) => {
-const vote = (id) => {
+  const vote = (id) => {
     props.voteAnecdote(id)
     const anecdote = props.anecdotes.find(anecdote => anecdote.id === id)
     props.setNotification(anecdote.content)
