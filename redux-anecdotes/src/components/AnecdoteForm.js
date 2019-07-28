@@ -9,10 +9,7 @@ const AnecdoteForm = (props) => {
     const content = event.target.add.value
     event.target.add.value = ''
     props.addAnecdote(content)
-    props.setNotification(content)
-    setTimeout(() => {
-      props.setNotification(null)
-    }, 3000)
+    props.setNotification(`You added ${content}`, 5)
   }
 
   return (

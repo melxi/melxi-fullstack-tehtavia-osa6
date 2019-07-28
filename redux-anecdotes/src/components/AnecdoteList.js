@@ -7,10 +7,7 @@ const AnecdoteList = (props) => {
   const vote = (id) => {
     const anecdote = props.anecdotes.find(anecdote => anecdote.id === id)
     props.voteAnecdote(anecdote)
-    props.setNotification(`you voted '${anecdote.content}'`, 10)
-    setTimeout(() => {
-      props.setNotification(null)
-    }, 3000)
+    props.setNotification(`you voted '${anecdote.content}'`, 5)
   }
 
   return (
